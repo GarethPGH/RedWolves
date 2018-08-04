@@ -1,0 +1,1 @@
+﻿//if button is redwolves change inner html from hidden to visible
