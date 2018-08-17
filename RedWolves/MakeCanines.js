@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     WolfButton.addEventListener("click", function (event) {
+        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
         VisibleContent = document.getElementById("WolfContent");
         if (IsVisible === "notVisible") {
             IsVisible = "Visible";
@@ -45,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         AssignMe(WolfButton);
     });
 
-    RedWolfButton.addEventListener("click", function (evemt) {
+    RedWolfButton.addEventListener("click", function (event) {
+        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
         VisibleContent = document.getElementById("RedWolfContent");
         if (IsVisible === "notVisible") {
             IsVisible = "Visible";
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     CoyoteButton.addEventListener("click", function (event) {
+        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
         VisibleContent = document.getElementById("CoyoteContent");
         if (IsVisible === "notVisible") {
             IsVisible = "Visible";
