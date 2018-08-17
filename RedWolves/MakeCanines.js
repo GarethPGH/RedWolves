@@ -1,31 +1,43 @@
 ﻿//if button is redwolves change inner html from hidden to visible
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    var Button1 = document.getElementById("Wolf");
-    var Button2 = document.getElementById("RedWolf");
-    var Button3 = document.getElementById("Coyote");
+    var WolfButton = document.getElementById("Wolf");
+    var RedWolfButton = document.getElementById("RedWolf");
+    var CoyoteButton = document.getElementById("Coyote");
 
+    var IsBtnClicked = "notClicked";
 
-    var AssignMe = function (event) {
+    var AssignMe = function (Btn) {
 
         var VisibleContent;
-
-        if (Button1) {
-            VisibleContent = document.getElementById("Content0");
+        //
+        if (Btn === WolfButton && IsBtnClicked === "clicked") {
+            VisibleContent = document.getElementById("WolfContent");
             VisibleContent.style.visibility = 'visible';
 
-        } else if (Button2) {
-            VisibleContent = document.getElementById("Content1");
+        } else if (Btn === RedWolfButton && IsBtnClicked === "clicked") {
+            VisibleContent = document.getElementById("RedWolfContent");
             VisibleContent.style.visibility = 'visible';
 
-        } else if (Button3) {
-            VisibleContent = document.getElementById("Content2");
+        } else if (Btn === CoyoteButton && IsBtnClicked === "clicked") {
+            VisibleContent = document.getElementById("CoyoteContent");
             VisibleContent.style.visibility = 'visible';
 
+        } else {
+            VisibleContent = "nothing";
         }
     }
 
-    Button1.addEventListener("click", AssignMe);
-    Button2.addEventListener("click", AssignMe);
-    Button3.addEventListener("click", AssignMe);
+    WolfButton.addEventListener("click", function (event) {
+        IsBtnClicked = "clicked";
+        AssignMe(WolfButton);
+    });
+    RedWolfButton.addEventListener("click", function (evemt) {
+        IsBtnClicked = "clicked";
+        AssignMe(RedWolfButton);
+    });
+    CoyoteButton.addEventListener("click", function (event) {
+        IsBtnClicked = "clicked";
+        AssignMe(CoyoteButton);
+    });
 });
