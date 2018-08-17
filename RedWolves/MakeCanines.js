@@ -1,43 +1,67 @@
 ﻿//if button is redwolves change inner html from hidden to visible
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    
     var WolfButton = document.getElementById("Wolf");
     var RedWolfButton = document.getElementById("RedWolf");
     var CoyoteButton = document.getElementById("Coyote");
+    
 
-    var IsBtnClicked = "notClicked";
+    var IsVisible = "notVisible";
+    var VisibleContent = null;
 
     var AssignMe = function (Btn) {
 
-        var VisibleContent;
-        //
-        if (Btn === WolfButton && IsBtnClicked === "clicked") {
-            VisibleContent = document.getElementById("WolfContent");
+        if (Btn === WolfButton && IsVisible === "Visible") {
             VisibleContent.style.visibility = 'visible';
 
-        } else if (Btn === RedWolfButton && IsBtnClicked === "clicked") {
-            VisibleContent = document.getElementById("RedWolfContent");
+        } else if (Btn === WolfButton && IsVisible === "notVisible") {
+            VisibleContent.style.visibility = "hidden";
+
+        } else if (Btn === RedWolfButton && IsVisible === "Visible") {
             VisibleContent.style.visibility = 'visible';
 
-        } else if (Btn === CoyoteButton && IsBtnClicked === "clicked") {
-            VisibleContent = document.getElementById("CoyoteContent");
+        } else if (Btn === RedWolfButton && IsVisible === "notVisible") {
+            VisibleContent.style.visibility = "hidden";
+
+        } else if (Btn === CoyoteButton && IsVisible === "Visible") {
             VisibleContent.style.visibility = 'visible';
+
+        } else if (Btn === CoyoteButton && IsVisible === "notVisible") {
+            VisibleContent.style.visibility = "hidden";
 
         } else {
-            VisibleContent = "nothing";
+            VisibleContent = "NotImplemented";
         }
     }
 
     WolfButton.addEventListener("click", function (event) {
-        IsBtnClicked = "clicked";
+        VisibleContent = document.getElementById("WolfContent");
+        if (IsVisible === "notVisible") {
+            IsVisible = "Visible";
+        } else {
+            IsVisible = "notVisible";
+        }
         AssignMe(WolfButton);
     });
+
     RedWolfButton.addEventListener("click", function (evemt) {
-        IsBtnClicked = "clicked";
+        VisibleContent = document.getElementById("RedWolfContent");
+        if (IsVisible === "notVisible") {
+            IsVisible = "Visible";
+        } else {
+            IsVisible = "notVisible";
+        }
         AssignMe(RedWolfButton);
     });
+
     CoyoteButton.addEventListener("click", function (event) {
-        IsBtnClicked = "clicked";
+        VisibleContent = document.getElementById("CoyoteContent");
+        if (IsVisible === "notVisible") {
+            IsVisible = "Visible";
+        } else {
+            IsVisible = "notVisible";
+        }
         AssignMe(CoyoteButton);
-    });
+    }); 
 });
