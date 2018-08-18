@@ -1,4 +1,4 @@
-﻿//if button is redwolves change inner html from hidden to visible
+﻿//Pain Point: Takes two button presses, instead of one to hide and show target information.
 
 document.addEventListener("DOMContentLoaded", function (event) {
     
@@ -10,61 +10,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var IsVisible = "notVisible";
     var VisibleContent = null;
 
-    var AssignMe = function (Btn) {
-
-        if (Btn === WolfButton && IsVisible === "Visible") {
-            VisibleContent.style.visibility = 'visible';
-
-        } else if (Btn === WolfButton && IsVisible === "notVisible") {
-            VisibleContent.style.visibility = "hidden";
-
-        } else if (Btn === RedWolfButton && IsVisible === "Visible") {
-            VisibleContent.style.visibility = 'visible';
-
-        } else if (Btn === RedWolfButton && IsVisible === "notVisible") {
-            VisibleContent.style.visibility = "hidden";
-
-        } else if (Btn === CoyoteButton && IsVisible === "Visible") {
-            VisibleContent.style.visibility = 'visible';
-
-        } else if (Btn === CoyoteButton && IsVisible === "notVisible") {
-            VisibleContent.style.visibility = "hidden";
-
-        } else {
-            VisibleContent = "NotImplemented";
-        }
-    }
-
-    WolfButton.addEventListener("click", function (event) {
-        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
-        VisibleContent = document.getElementById("WolfContent");
+    //Toggle Visibility
+    var ToggleIsVisible = function (Btn) {
         if (IsVisible === "notVisible") {
             IsVisible = "Visible";
         } else {
             IsVisible = "notVisible";
+            VisibleContent.style.visibility = "hidden";
+
         }
-        AssignMe(WolfButton);
+
+    }
+
+    //Assign Content to Buttons
+    WolfButton.addEventListener("click", function (event) {
+
+        VisibleContent = document.getElementById("WolfContent");
+        VisibleContent.style.visibility = 'visible';
+
+        ToggleIsVisible(WolfButton);
     });
 
     RedWolfButton.addEventListener("click", function (event) {
-        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
+
         VisibleContent = document.getElementById("RedWolfContent");
-        if (IsVisible === "notVisible") {
-            IsVisible = "Visible";
-        } else {
-            IsVisible = "notVisible";
-        }
-        AssignMe(RedWolfButton);
+        VisibleContent.style.visibility = 'visible';
+
+        ToggleIsVisible(RedWolfButton);
     });
 
     CoyoteButton.addEventListener("click", function (event) {
-        if (VisibleContent) { VisibleContent.style.visibility = "hidden"; } 
+
         VisibleContent = document.getElementById("CoyoteContent");
-        if (IsVisible === "notVisible") {
-            IsVisible = "Visible";
-        } else {
-            IsVisible = "notVisible";
-        }
+        VisibleContent.style.visibility = 'visible';
+
         AssignMe(CoyoteButton);
     }); 
 });
