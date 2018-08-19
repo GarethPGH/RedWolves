@@ -8,42 +8,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
 
     var IsVisible = "notVisible";
-    var VisibleContent = null;
+    var VisibleContent = document.getElementById("PlaceContentHere");
+    var BtnContent = null;
 
-    //Toggle Visibility
-    var ToggleIsVisible = function (Btn) {
-        if (IsVisible === "notVisible") {
-            IsVisible = "Visible";
-        } else {
-            IsVisible = "notVisible";
-            VisibleContent.style.visibility = "hidden";
 
-        }
-
-    }
 
     //Assign Content to Buttons
     WolfButton.addEventListener("click", function (event) {
+        VisibleContent.style.visibility = "hidden";
 
-        VisibleContent = document.getElementById("WolfContent");
-        VisibleContent.style.visibility = 'visible';
+        BtnContent = document.getElementById("WolfContent");
+        BtnContent.style.visibility = 'visible';
 
-        ToggleIsVisible(WolfButton);
+        VisibleContent = BtnContent;
     });
 
     RedWolfButton.addEventListener("click", function (event) {
 
-        VisibleContent = document.getElementById("RedWolfContent");
-        VisibleContent.style.visibility = 'visible';
+        VisibleContent.style.visibility = "hidden";
 
-        ToggleIsVisible(RedWolfButton);
+        BtnContent = document.getElementById("RedWolfContent");
+        BtnContent.style.visibility = 'visible';
+
+        VisibleContent = BtnContent;
     });
 
     CoyoteButton.addEventListener("click", function (event) {
 
-        VisibleContent = document.getElementById("CoyoteContent");
-        VisibleContent.style.visibility = 'visible';
+        VisibleContent.style.visibility = "hidden";
 
-        AssignMe(CoyoteButton);
+        BtnContent = document.getElementById("CoyoteContent");
+        BtnContent.style.visibility = 'visible';
+
+        VisibleContent = BtnContent;
     }); 
 });
