@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     //Assign Content to Buttons
     WolfButton.addEventListener("click", function (event) {
-        VisibleContent.style.visibility = "hidden";
+        VisibleContent.style.visibility = 'hidden';
 
         BtnContent = document.getElementById("WolfContent");
         BtnContent.style.visibility = 'visible';
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     RedWolfButton.addEventListener("click", function (event) {
 
-        VisibleContent.style.visibility = "hidden";
+        VisibleContent.style.visibility = 'hidden';
 
         BtnContent = document.getElementById("RedWolfContent");
         BtnContent.style.visibility = 'visible';
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     CoyoteButton.addEventListener("click", function (event) {
 
-        VisibleContent.style.visibility = "hidden";
+        VisibleContent.style.visibility = 'hidden';
 
         BtnContent = document.getElementById("CoyoteContent");
         BtnContent.style.visibility = 'visible';
