@@ -1,6 +1,6 @@
 ﻿body {
     display: flex;
-    background-color: beige;
+    background-color: khaki;
 }
 #Space{
     display:flex;
@@ -13,7 +13,7 @@
     justify-content: center;
     background-color: rgb(244,179,66);
     font-family: sans-serif;
-    color: wheat;
+    color: firebrick;
 }
 #WolfContent{
     display: flex;
@@ -33,15 +33,23 @@
     justify-content: center;
     align-content: space-around;
 }
+#Foot {
+    display: flex;
+    align-self: flex-end;
+    background-color: darkgrey;
+}
 .Content{
     display: flex;
     align-items: center;
     flex-flow: wrap column-reverse;
     visibility: hidden;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
 }
-#Foot{
-    display:flex;
-    align-self: flex-end;
-    background-color: darkgrey;
 
-}

@@ -1,4 +1,6 @@
 ﻿//Hides and Shows content based on button press.
+
+//Add "landing page" content so default content will show on loaded page before button press
 document.addEventListener("DOMContentLoaded", function (event) {
     
     var WolfButton = document.getElementById("Wolf");
