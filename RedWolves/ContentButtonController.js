@@ -1,7 +1,8 @@
 ﻿//Hides and Shows content based on button press.
 
-//Add "landing page" content so default content will show on loaded page before button press
+
 document.addEventListener("DOMContentLoaded", function (event) {
+    //Still acts wonkey because of where content is actually located in the HTML, but will work for my puurposes
     
     var WolfButton = document.getElementById("Wolf");
     var RedWolfButton = document.getElementById("RedWolf");
