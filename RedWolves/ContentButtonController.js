@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
     WolfButton.addEventListener("click", function (event) {
 
+        var LandingImage = document.getElementById("Landing");
+        LandingImage.style.display = 'none';
+
         if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
         BtnContent = document.getElementById("WolfContent");
@@ -23,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     RedWolfButton.addEventListener("click", function (event) {
 
+        var LandingImage = document.getElementById("Landing");
+        LandingImage.style.display = 'none';
+
         if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
         BtnContent = document.getElementById("RedWolfContent");
@@ -33,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     CoyoteButton.addEventListener("click", function (event) {
+
+        var LandingImage = document.getElementById("Landing");
+        LandingImage.style.display = 'none';
 
         if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
