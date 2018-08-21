@@ -1,12 +1,11 @@
 ﻿body {
     display: flex;
-    flex-basis: auto;
     background-color: beige;
 }
 #Space{
     display:flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-flow: column;
 }
 #Title {
     display: flex;
@@ -15,6 +14,18 @@
     background-color: rgb(244,179,66);
     font-family: sans-serif;
     color: wheat;
+}
+#WolfContent{
+    display: flex;
+    flex-direction: column;
+}
+#RedWolfContent {
+    display: flex;
+    flex-direction: column;
+}
+#CoyoteContent {
+    display: flex;
+    flex-direction: column;
 }
 #Buttons{
     display: flex;
@@ -30,6 +41,7 @@
 }
 #Foot{
     display:flex;
-    align-self:flex-end;
+    align-self: flex-end;
+    background-color: darkgrey;
 
 }

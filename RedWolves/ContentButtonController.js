@@ -1,23 +1,19 @@
-﻿//Pain Point: Takes two button presses, instead of one to hide and show target information.
-
+﻿//Hides and Shows content based on button press.
 document.addEventListener("DOMContentLoaded", function (event) {
     
     var WolfButton = document.getElementById("Wolf");
     var RedWolfButton = document.getElementById("RedWolf");
     var CoyoteButton = document.getElementById("Coyote");
     
-
-    var IsVisible = "notVisible";
-    var VisibleContent = document.getElementById("PlaceContentHere");
+    var VisibleContent;
     var BtnContent = null;
-
-
-
-    //Assign Content to Buttons
+    
     WolfButton.addEventListener("click", function (event) {
-        VisibleContent.style.visibility = 'hidden';
+
+        if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
         BtnContent = document.getElementById("WolfContent");
+        BtnContent.style.display = 'flex';
         BtnContent.style.visibility = 'visible';
 
         VisibleContent = BtnContent;
@@ -25,9 +21,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     RedWolfButton.addEventListener("click", function (event) {
 
-        VisibleContent.style.visibility = 'hidden';
+        if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
         BtnContent = document.getElementById("RedWolfContent");
+        BtnContent.style.display = 'flex';
         BtnContent.style.visibility = 'visible';
 
         VisibleContent = BtnContent;
@@ -35,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     CoyoteButton.addEventListener("click", function (event) {
 
-        VisibleContent.style.visibility = 'hidden';
+        if (VisibleContent) { VisibleContent.style.display = 'none'; }
 
         BtnContent = document.getElementById("CoyoteContent");
+        BtnContent.style.display = 'flex';
         BtnContent.style.visibility = 'visible';
 
         VisibleContent = BtnContent;
