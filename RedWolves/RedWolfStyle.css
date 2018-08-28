@@ -2,6 +2,12 @@
     display: flex;
     background-color: khaki;
 }
+
+#Landing{
+    display: flex;
+    justify-content: center;
+    margin: 3vw;
+}
 #Space{
     display:flex;
     justify-content: space-between;
@@ -14,6 +20,10 @@
     background-color: rgb(244,179,66);
     font-family: sans-serif;
     color: firebrick;
+}
+.Photo{
+    justify-content: center;
+
 }
 #WolfContent{
     display: flex;
@@ -44,7 +54,7 @@
     flex-flow: wrap column-reverse;
     visibility: hidden;
     background-color: whitesmoke;
-    border-radius: 5px;
+    border-radius: 5em;
     margin-left: 5vw;
     margin-right: 5vw;
     padding-left: 5vw;
@@ -52,4 +62,3 @@
     margin-bottom: 2vh;
     padding-bottom: 2vh;
 }
-
