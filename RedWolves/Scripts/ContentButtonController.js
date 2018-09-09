@@ -1,5 +1,7 @@
 ﻿//Hides and Shows content based on button press.
-
+//Figure out how to add event listener to 3 buttons 
+//Wire their content appropriately
+//CORRECTLY Implement the code in WolfButton to show content
 
 document.addEventListener("DOMContentLoaded", function (event) {
     //Still acts wonkey because of where content is actually located in the HTML, but will work for my puurposes
@@ -9,20 +11,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var CoyoteButton = document.getElementById("Coyote");
     
     var VisibleContent;
-    var BtnContent = null;
+    var BtnContent = document.getElementById("PageContent");
     
     WolfButton.addEventListener("click", function (event) {
-
+        
         var LandingImage = document.getElementById("Landing");
         LandingImage.style.display = 'none';
 
-        if (VisibleContent) { VisibleContent.style.display = 'none'; }
+        var element = document.getElementById('WolfContent');
 
-        BtnContent = document.getElementById("WolfContent");
-        BtnContent.style.display = 'flex';
-        BtnContent.style.visibility = 'visible';
+        if (!element) {
+            alert("no such element");
+            return;
+        }
 
-        VisibleContent = BtnContent;
+        var pages = document.getElementsByClassName('Content');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }       
+
+        element.style.display = 'flex';
+        if (element.hasChildNodes) {
+            element.childNodes.style.display = "flex";
+        }
+
+        
     });
 
     RedWolfButton.addEventListener("click", function (event) {
@@ -52,4 +65,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         VisibleContent = BtnContent;
     }); 
+ 
 });
