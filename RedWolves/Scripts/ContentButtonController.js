@@ -1,69 +1,71 @@
 ﻿//Hides and Shows content based on button press.
-//Figure out how to add event listener to 3 buttons 
-//Wire their content appropriately
-//CORRECTLY Implement the code in WolfButton to show content
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    //Still acts wonkey because of where content is actually located in the HTML, but will work for my puurposes
-    
+    //Behaves as expected, however, does not show child content.
+
     var WolfButton = document.getElementById("Wolf");
     var RedWolfButton = document.getElementById("RedWolf");
     var CoyoteButton = document.getElementById("Coyote");
-    
-    var VisibleContent;
-    var BtnContent = document.getElementById("PageContent");
-    
-    WolfButton.addEventListener("click", function (event) {
-        
-        var LandingImage = document.getElementById("Landing");
-        LandingImage.style.display = 'none';
 
-        var element = document.getElementById('WolfContent');
+    function HideContent() {
 
-        if (!element) {
+        var pages = document.getElementsByClassName('Content');
+
+        for (var i = 0; i < pages.length; i++) {
+            if (pages[i].style.display === 'flex') {
+                pages[i].style.display = 'none';
+            }
+        }
+    }
+
+    function ShowContent(Info) {
+        if (!Info) {
             alert("no such element");
             return;
         }
 
-        var pages = document.getElementsByClassName('Content');
-        for (var i = 0; i < pages.length; i++) {
-            pages[i].style.display = 'none';
-        }       
+        Info.style.display = 'flex';
+        var hasChildren = Info.hasChildNodes;
 
-        element.style.display = 'flex';
-        if (element.hasChildNodes) {
-            element.childNodes.style.display = "flex";
+        if (hasChildren) {
+            Info.childNodes.style.display = 'flex';
+            Info.childNodes.style.visibility = 'visible';
         }
+    }
 
+    function HideLanding() {
+        var LandingImage = document.getElementById("Landing");
+        LandingImage.style.display = 'none';
+    }
+    
+    WolfButton.addEventListener("click", function (event) {
+
+        HideContent();
+        HideLanding();
+
+        var element = document.getElementById('WolfContent');
+        ShowContent(element);
         
     });
 
     RedWolfButton.addEventListener("click", function (event) {
 
-        var LandingImage = document.getElementById("Landing");
-        LandingImage.style.display = 'none';
+        HideContent();
+        HideLanding();
 
-        if (VisibleContent) { VisibleContent.style.display = 'none'; }
-
-        BtnContent = document.getElementById("RedWolfContent");
-        BtnContent.style.display = 'flex';
-        BtnContent.style.visibility = 'visible';
-
-        VisibleContent = BtnContent;
+        var element = document.getElementById('RedWolfContent');
+        ShowContent(element);
+      
     });
 
     CoyoteButton.addEventListener("click", function (event) {
 
-        var LandingImage = document.getElementById("Landing");
-        LandingImage.style.display = 'none';
+        HideContent();
+        HideLanding();
 
-        if (VisibleContent) { VisibleContent.style.display = 'none'; }
-
-        BtnContent = document.getElementById("CoyoteContent");
-        BtnContent.style.display = 'flex';
-        BtnContent.style.visibility = 'visible';
-
-        VisibleContent = BtnContent;
+        var element = document.getElementById('CoyoteContent');
+        ShowContent(element);
+       
     }); 
  
 });
