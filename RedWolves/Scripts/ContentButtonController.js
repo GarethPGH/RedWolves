@@ -1,4 +1,5 @@
-﻿//Hides and Shows content based on button press.
+﻿"use strict"
+//Hides and Shows content based on button press.
 
 document.addEventListener("DOMContentLoaded", function (event) {
     //Behaves as expected, however, does not show child content.
@@ -13,24 +14,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         for (var i = 0; i < pages.length; i++) {
             if (pages[i].style.display === 'flex') {
-                pages[i].style.display = 'none';
+                pages[i].classList.add('hide');
             }
         }
     }
 
     function ShowContent(Info) {
-        if (!Info) {
-            alert("no such element");
-            return;
-        }
-
+        console.log(Info);
         Info.style.display = 'flex';
-        var hasChildren = Info.hasChildNodes;
 
-        if (hasChildren) {
-            Info.childNodes.style.display = 'flex';
-            Info.childNodes.style.visibility = 'visible';
+        if (Info.classList.contains('hide')) {
+            Info.classList.remove('hide');
+            Info.classList.add('show');
         }
+        //var hasChildren = Info.hasChildNodes;
+
+        //if (hasChildren) {
+        //    Info.childNodes.style.display = 'flex';
+        //    Info.childNodes.style.visibility = 'visible';
+        //}
     }
 
     function HideLanding() {
