@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function ShowContent(Info) {
         console.log(Info);
         Info.style.display = 'flex';
-
+        //toggles class list, but the added class don't really DO anything they are supposed to.
         if (Info.classList.contains('hide')) {
             Info.classList.remove('hide');
             Info.classList.add('show');
+        } else {
+            Info.classList.remove('show');
+            Info.classList.add('hide');
         }
         //var hasChildren = Info.hasChildNodes;
 
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
     WolfButton.addEventListener("click", function (event) {
 
-        HideContent();
+       // HideContent();
         HideLanding();
 
         var element = document.getElementById('WolfContent');
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     RedWolfButton.addEventListener("click", function (event) {
 
-        HideContent();
+       // HideContent();
         HideLanding();
 
         var element = document.getElementById('RedWolfContent');
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     CoyoteButton.addEventListener("click", function (event) {
 
-        HideContent();
+       // HideContent();
         HideLanding();
 
         var element = document.getElementById('CoyoteContent');
