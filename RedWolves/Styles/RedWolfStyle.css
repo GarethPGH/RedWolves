@@ -33,15 +33,15 @@
     display: flex;
 }
 #WolfContent{
-    display: flex;
+   //display: flex;
     flex-direction: column;
 }
 #RedWolfContent {
-    display: flex;
+   // display: flex;
     flex-direction: column;
 }
 #CoyoteContent {
-    display: flex;
+   // display: flex;
     flex-direction: column;
 }
 #Buttons{
