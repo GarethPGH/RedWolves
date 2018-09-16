@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var Info = document.getElementsByClassName('Content');
         for (let i = 0; i < Info.length; i++) {
             Info[i].classList.add('hide');
+
         }
     }
 
@@ -34,37 +35,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     WolfButton.addEventListener("click", function (event) {
-        
-        HideLanding();
-
-        HideAllContent();
-
         var element = document.getElementById('WolfContent');
-      
         ShowHideContent(element);
     });
 
     RedWolfButton.addEventListener("click", function (event) {
-
-        HideLanding();
-
-        HideAllContent();
-
         var element = document.getElementById('RedWolfContent');
-      
         ShowHideContent(element);
     });
 
     CoyoteButton.addEventListener("click", function (event) {
-
-        HideLanding();
-
-        HideAllContent();
-
         var element = document.getElementById('CoyoteContent');
-
         ShowHideContent(element);
-       
     }); 
  
 });
