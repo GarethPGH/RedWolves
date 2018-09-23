@@ -10,40 +10,89 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     
 
-    var ShowHideContent = function (Cont) {
+    var HideLanding = function () {
         var LandingImage = document.getElementById("Landing");
         LandingImage.style.display = 'none';
-    
-        var Info = document.getElementsByClassName('Content');
-        for (let i = 0; i < Info.length; i++) {
-            Info[i].classList.add('hide');
-        }
-
-        console.log(Cont);
-
-        Cont.style.visibility = 'visible';
-
-        if (Cont.className === 'hide') {
-            Cont.className.remove('hide');
-        } else {
-            Cont.className.add('hide');
-        }
     };
+
+    //    var Info = document.getElementsByClassName('Content');
+    //    for (let i = 0; i < Info.length; i++) {
+    //        Info[i].classList.add('hide');
+    //    }
+
+    //    console.log(Cont);
+
+    //    Cont.style.visibility = 'visible';
+    
+    //    if (Cont.className === 'hide') {
+    //        Cont.className.remove('hide');
+    //    } else {
+    //        Cont.className.add('hide');
+    //    }
+    //};
 
 
     WolfButton.addEventListener("click", function (event) {
+        HideLanding();
+
         var element = document.getElementById('WolfContent');
-        ShowHideContent(element);
+        var element1tohide = document.getElementById('RedWolfContent');
+        var element2tohide = document.getElementById('CoyoteContent');
+
+        element1tohide.style.display = 'none';
+        element2tohide.style.display = 'none';
+
+        if (element.classList.contains('hide')) {
+            element.classList.remove('hide');
+            element.style.visibility = 'visible';
+            element.style.display = 'flex';
+        } else {
+            element.classList.add('hide');
+            element.style.visibility = 'hidden';
+        }
+        console.log("classes: " + element.classList + " " + "display: " + element.style.display);
     });
 
     RedWolfButton.addEventListener("click", function (event) {
+        HideLanding();
+
         var element = document.getElementById('RedWolfContent');
-        ShowHideContent(element);
+        var element1tohide = document.getElementById('WolfContent');
+        var element2tohide = document.getElementById('CoyoteContent');
+
+        element1tohide.style.display = 'none';
+        element2tohide.style.display = 'none';
+
+        if (element.classList.contains('hide')) {
+            element.classList.remove('hide');
+            element.style.visibility = 'visible';
+            element.style.display = 'flex';
+        } else {
+            element.classList.add('hide');
+            element.style.visibility = 'hidden';
+        }
+        console.log("classes: " + element.classList + " " + "display: " + element.style.display);
     });
 
     CoyoteButton.addEventListener("click", function (event) {
+        HideLanding();
+
         var element = document.getElementById('CoyoteContent');
-        ShowHideContent(element);
+        var element1tohide = document.getElementById('RedWolfContent');
+        var element2tohide = document.getElementById('WolfContent');
+
+        element1tohide.style.display = 'none';
+        element2tohide.style.display = 'none';
+
+        if (element.classList.contains('hide')) {
+            element.classList.remove('hide');
+            element.style.visibility = 'visible';
+            element.style.display = 'flex';
+        } else {
+            element.classList.add('hide');
+            element.style.visibility = 'hidden';
+        }
+        console.log("classes: " + element.classList + " " + "display: " + element.style.display);
     }); 
  
 });
