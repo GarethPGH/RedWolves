@@ -8,31 +8,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var RedWolfButton = document.getElementById("RedWolf");
     var CoyoteButton = document.getElementById("Coyote");
 
-    function HideLanding() {
+    
+
+    var ShowHideContent = function (Cont) {
         var LandingImage = document.getElementById("Landing");
         LandingImage.style.display = 'none';
-    }
-
-    function HideAllContent() {
+    
         var Info = document.getElementsByClassName('Content');
         for (let i = 0; i < Info.length; i++) {
             Info[i].classList.add('hide');
-
         }
-    }
-
-    function ShowHideContent(Cont) {
 
         console.log(Cont);
 
         Cont.style.visibility = 'visible';
 
         if (Cont.className === 'hide') {
-            Cont.className = 'show';
+            Cont.className.remove('hide');
         } else {
-            Cont.className = 'hide';
+            Cont.className.add('hide');
         }
-    }
+    };
+
 
     WolfButton.addEventListener("click", function (event) {
         var element = document.getElementById('WolfContent');
