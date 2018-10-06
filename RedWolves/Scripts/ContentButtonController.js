@@ -3,8 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    //If defined BELOW button click assignment, recieve HideLanding is not a function
-    //Works automatically ABOVE button click assignment.
+    //still works automatically
     var HideLanding = function () {
         var LandingImage = document.getElementById("Landing");
         LandingImage.style.display = 'none';
@@ -13,51 +12,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var buttons = document.getElementsByClassName("Btn");
     var clicked = new Array();
 
-    for (let i = 0; i < buttons.length; i++) {
-        clicked[i] = buttons[i].id;     
-        buttons[i].addEventListener('click', ShowHideElements(clicked[i]));
-    }
-
     ///This part still does not function
-    function ShowHideElements(buttonid) {
-        var buttonIdString = buttonid + "";
-        console.log(buttonIdString);
+    document.addEventListener('click', function ShowHideElements(event) {
+
         var element;
         var element1tohide;
         var element2tohide;
+        console.log(event.target);
 
-        if (buttonIdString === 'Wolf') {
+        //Gets correct button targets but some reason the if statement
+        //automatically defaults to the else statement and element1tohide and element2tohide are undefined
+        if (event.target.matches('Wolf')) {
             element = document.getElementById('WolfContent');
             element1tohide = document.getElementById('RedWolfContent');
             element2tohide = document.getElementById('CoyoteContent');
-        } else if (buttonIdString === 'RedWolf') {
+        } else if (event.target.matches('RedWolf')) {
             element = document.getElementById('RedWolfContent');
             element1tohide = document.getElementById('WolfContent');
             element2tohide = document.getElementById('CoyoteContent');
-        } else if (buttonIdString === 'Coyote') {
+        } else if (event.target.matches('Coyote')) {
             element = document.getElementById('CoyoteContent');
             element1tohide = document.getElementById('RedWolfContent');
             element2tohide = document.getElementById('WolfContent');
+        } else {
+            console.log('wtf man?');
         }
-
-       
-        console.log(element + " " + element1tohide + " " + element2tohide);
-
         //at least this works
         HideLanding();
 
         element1tohide.style.display = 'none';
         element2tohide.style.display = 'none';
 
-        if (element.classList.contains('hide')) {
-            element.classList.remove('hide');
+        if (element.hasChildNodes) {
+            var eleChilds = element.childNodes;
+        }
+        if (element.display === 'none') {
             element.style.visibility = 'visible';
             element.style.display = 'flex';
-        } else {
-            element.classList.add('hide');
-            element.style.visibility = 'hidden';
+
+            eleChilds.style.visibility = 'visible';
         }
-        console.log("classes: " + element.classList + " " + "display: " + element.style.display);
-    }
- 
+    });
 });
