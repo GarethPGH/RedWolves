@@ -12,44 +12,55 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var buttons = document.getElementsByClassName("Btn");
     var clicked = new Array();
 
-    ///This part still does not function
-    document.addEventListener('click', function ShowHideElements(event) {
+    ///This is working, but wierdly. You have to click on one button to trigger HideLanding();
+    //Then you must click on a DIFFERENT button to start toggling content. 
+    //Not sure what to do here, perhaps use a different event listener for Landing such that if you click anywhere on Landing
+    //It hides it and have redwolf default to shown on page.
 
+    document.addEventListener('click', function ShowHideElements(event) {
+        var button = event.target.id;
         var element;
         var element1tohide;
         var element2tohide;
-        console.log(event.target);
 
-        //Gets correct button targets but some reason the if statement
-        //automatically defaults to the else statement and element1tohide and element2tohide are undefined
-        if (event.target.matches('Wolf')) {
-            element = document.getElementById('WolfContent');
-            element1tohide = document.getElementById('RedWolfContent');
-            element2tohide = document.getElementById('CoyoteContent');
-        } else if (event.target.matches('RedWolf')) {
-            element = document.getElementById('RedWolfContent');
-            element1tohide = document.getElementById('WolfContent');
-            element2tohide = document.getElementById('CoyoteContent');
-        } else if (event.target.matches('Coyote')) {
-            element = document.getElementById('CoyoteContent');
-            element1tohide = document.getElementById('RedWolfContent');
-            element2tohide = document.getElementById('WolfContent');
-        } else {
-            console.log('wtf man?');
-        }
-        //at least this works
+        console.log(button);
+
+        switch (button) {
+            case 'Wolf':
+                element = document.getElementById('WolfContent');
+                element1tohide = document.getElementById('RedWolfContent');
+                element2tohide = document.getElementById('CoyoteContent');
+                console.log(element + " " + element1tohide + " " + element2tohide);
+                break;
+            case 'RedWolf':
+                element = document.getElementById('RedWolfContent');
+                element1tohide = document.getElementById('WolfContent');
+                element2tohide = document.getElementById('CoyoteContent');
+                console.log(element + " " + element1tohide + " " + element2tohide);
+                break;
+            case 'Coyote':
+                element = document.getElementById('CoyoteContent');
+                element1tohide = document.getElementById('RedWolfContent');
+                element2tohide = document.getElementById('WolfContent');
+                console.log(element + " " + element1tohide + " " + element2tohide);
+                break;
+            default:
+                console.log("Wtf Man");
+                console.log(element + " " + element1tohide + " " + element2tohide);
+        }           
+
         HideLanding();
-
         element1tohide.style.display = 'none';
         element2tohide.style.display = 'none';
 
         if (element.hasChildNodes) {
             var eleChilds = element.childNodes;
         }
-        if (element.display === 'none') {
-            element.style.visibility = 'visible';
-            element.style.display = 'flex';
+        if (element.style.display === 'none') {
 
+            element.style.display = 'flex';
+            element.style.visibility = 'visible';
+            eleChilds.style.display = 'flex';
             eleChilds.style.visibility = 'visible';
         }
     });
