@@ -1,9 +1,8 @@
-﻿"use strict"
+﻿"use strict";
 //Hides and Shows content based on button press.
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    //still works automatically
     var HideLanding = function () {
         var LandingImage = document.getElementById("Landing");
         LandingImage.style.display = 'none';
@@ -16,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //Then you must click on a DIFFERENT button to start toggling content. 
     //Not sure what to do here, perhaps use a different event listener for Landing such that if you click anywhere on Landing
     //It hides it and have redwolf default to shown on page.
+    //Debating whether to rewrite to use async, if that would help.
 
     document.addEventListener('click', function ShowHideElements(event) {
         var button = event.target.id;
@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 console.log(element + " " + element1tohide + " " + element2tohide);
         }           
 
-        HideLanding();
         element1tohide.style.display = 'none';
         element2tohide.style.display = 'none';
 
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var eleChilds = element.childNodes;
         }
         if (element.style.display === 'none') {
-
             element.style.display = 'flex';
             element.style.visibility = 'visible';
             eleChilds.style.display = 'flex';
