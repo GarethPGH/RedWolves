@@ -3,14 +3,6 @@
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    var HideLanding = function () {
-        var LandingImage = document.getElementById("Landing");
-        LandingImage.style.display = 'none';
-    };
-
-    var buttons = document.getElementsByClassName("Btn");
-    var clicked = new Array();
-
     ///This is working, but wierdly. You have to click on one button to trigger HideLanding();
     //Then you must click on a DIFFERENT button to start toggling content. 
     //Not sure what to do here, perhaps use a different event listener for Landing such that if you click anywhere on Landing
@@ -22,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var element;
         var element1tohide;
         var element2tohide;
-
-        console.log(button);
+        var landingclick = false;
 
         switch (button) {
             case 'Wolf':
@@ -31,24 +22,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 element1tohide = document.getElementById('RedWolfContent');
                 element2tohide = document.getElementById('CoyoteContent');
                 console.log(element + " " + element1tohide + " " + element2tohide);
+                landingclick = true;
                 break;
             case 'RedWolf':
                 element = document.getElementById('RedWolfContent');
                 element1tohide = document.getElementById('WolfContent');
                 element2tohide = document.getElementById('CoyoteContent');
                 console.log(element + " " + element1tohide + " " + element2tohide);
+                landingclick = true;
                 break;
             case 'Coyote':
                 element = document.getElementById('CoyoteContent');
                 element1tohide = document.getElementById('RedWolfContent');
                 element2tohide = document.getElementById('WolfContent');
                 console.log(element + " " + element1tohide + " " + element2tohide);
+                landingclick = true;
                 break;
             default:
                 console.log("Wtf Man");
                 console.log(element + " " + element1tohide + " " + element2tohide);
-        }           
+        }
 
+        if (landingclick === true) {
+            var LandingImage = document.getElementById("Landing");
+            LandingImage.style.display = 'none';
+        }
+        
         element1tohide.style.display = 'none';
         element2tohide.style.display = 'none';
 
