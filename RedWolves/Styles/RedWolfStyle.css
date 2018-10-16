@@ -2,11 +2,17 @@
     display: flex;
     background-color: khaki;
 }
-
+footer{
+    top: 75%;
+    display:flex;
+    background-color: tan;
+}
 #Landing{
     display: flex;
     justify-content: center;
     margin: 3vw;
+    width: 100vw;
+    height: 100vh;
 }
 #Space{
     display:flex;
@@ -23,18 +29,14 @@
 }
 .Photo{
     justify-content: center;
-
 }
 #WolfContent{
-   //display: flex;
     flex-direction: column;
 }
 #RedWolfContent {
-   // display: flex;
     flex-direction: column;
 }
 #CoyoteContent {
-   // display: flex;
     flex-direction: column;
 }
 #Buttons{
@@ -43,11 +45,7 @@
     justify-content: center;
     align-content: space-around;
 }
-#Foot {
-    display: flex;
-    align-self: flex-end;
-    background-color: darkgrey;
-}
+
 .Content{
     display: flex;
     align-items: center;
