@@ -15,26 +15,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 element = document.getElementById('WolfContent');
                 element1tohide = document.getElementById('RedWolfContent');
                 element2tohide = document.getElementById('CoyoteContent');
-                console.log(element + " " + element1tohide + " " + element2tohide);
                 landingclick = true;
                 break;
             case 'RedWolf':
                 element = document.getElementById('RedWolfContent');
                 element1tohide = document.getElementById('WolfContent');
                 element2tohide = document.getElementById('CoyoteContent');
-                console.log(element + " " + element1tohide + " " + element2tohide);
                 landingclick = true;
                 break;
             case 'Coyote':
                 element = document.getElementById('CoyoteContent');
                 element1tohide = document.getElementById('RedWolfContent');
                 element2tohide = document.getElementById('WolfContent');
-                console.log(element + " " + element1tohide + " " + element2tohide);
                 landingclick = true;
                 break;
             default:
-                console.log("Wtf Man");
-                console.log(element + " " + element1tohide + " " + element2tohide);
+                console.log("Buttons not clicked, element(s) not assigned.");
         }
 
         if (element1tohide && element2tohide) {

@@ -2,9 +2,11 @@
     display: flex;
     background-color: khaki;
 }
-footer{
+footer {
+    display: flex;
     top: 75%;
-    display:flex;
+    margin: 0;
+    padding: 0;
     background-color: tan;
 }
 #Landing{
@@ -22,6 +24,8 @@ footer{
 #Title {
     display: flex;
     width: 100vw;
+    margin: 0;
+    padding: 0;
     justify-content: center;
     background-color: rgb(244,179,66);
     font-family: sans-serif;
