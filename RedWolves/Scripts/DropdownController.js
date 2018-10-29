@@ -2,22 +2,30 @@
 
     var menu = document.getElementById("Dropdown");
     console.log("onmouseover event not fired, " + menu);
-    var forDropdown = document.getElementById("References");
+    var forDropdown = document.getElementById("AnimateDropdown");
 
-    document.addEventListener('onmouseover', function () {
+    document.addEventListener('mouseover', function () {
         //these arent happening
-        forDropdown.onmouseover = function () {
-            console.log("onmouseover event fired");
-            menu.style.display = 'flex';
-        };
+        if (menu) {
+            forDropdown.onmouseover = function (menu) {
+                console.log("onmouseover event fired");
+                menu.style.display = 'flex';
+            };
+        } else {
+            console.log('Menu does not exist');
+        }
     });
 
-    document.addEventListener('onmouseout', function () {
+    document.addEventListener('mouseout', function () {
 
-        forDropdown.onmouseout = function () {
+        if (menu) {
+        forDropdown.onmouseout = function (menu) {
             console.log("element disappeared?");
-            menu.style.display = "none";
+            menu.style.display = 'none';
         };
+        } else {
+            console.log('Menu does not exist');
+        }
     });
   
 });
