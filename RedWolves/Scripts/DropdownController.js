@@ -4,9 +4,9 @@
     console.log("onmouseover event not fired, " + menu);
     var forDropdown = document.getElementById("AnimateDropdown");
 
-    document.addEventListener('mouseover', function () {
+    document.addEventListener('mouseover', function (event) {
         //these arent happening
-        if (menu) {
+        if (menu === event.target) {
             forDropdown.onmouseover = function (menu) {
                 console.log("onmouseover event fired");
                 menu.style.display = 'flex';
@@ -16,9 +16,9 @@
         }
     });
 
-    document.addEventListener('mouseout', function () {
+    document.addEventListener('mouseout', function (event) {
 
-        if (menu) {
+        if (menu === event.target) {
         forDropdown.onmouseout = function (menu) {
             console.log("element disappeared?");
             menu.style.display = 'none';
