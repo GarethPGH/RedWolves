@@ -8,6 +8,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: tan;
+    justify-content: space-around;
 }
 #Landing{
     display: flex;
@@ -18,7 +19,7 @@ footer {
 }
 #Space{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-flow: column;
 }
 #Title {
@@ -49,7 +50,10 @@ footer {
     justify-content: center;
     align-content: space-around;
 }
-
+#Dropdown{
+    display: flex;
+    flex-flow: column;
+}
 .Content{
     display: flex;
     align-items: center;
