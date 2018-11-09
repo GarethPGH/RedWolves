@@ -8,7 +8,7 @@
     
 </head>
 <body>
-    <link type="text/css" rel="stylesheet" href="Styles/RedWolfStyle.css" />
+    <link type="text/css" rel="stylesheet" href="../Styles/RedWolfStyle.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 
@@ -28,7 +28,7 @@
         <div id="PlaceContentHere">
 
             <div id="Landing">
-                <img src="Pictures/redwolfport900h.jpg" title="portrait of red wolf" />
+                <img src="../Pictures/redwolfport900h.jpg" title="portrait of red wolf" />
             </div>
             <div id="PageContent">
                 <!--There should be content that is dynamically added here on button press-->
@@ -36,7 +36,7 @@
                 <div class="Content" id="WolfContent" style="display:none">
                     <div><h2 class="SpeciesName">Grey Wolves/ <i>Canis Lupus</i></h2></div>
                     <div class="Photo">
-                        <img src="Pictures/wolf600w.jpg" title="grey wolf" />
+                        <img id="WolfImg" src="../Pictures/wolf600w.jpg" title="grey wolf" />
                     </div>
                     <div class="Info Description">
                         <h3>Description</h3>
@@ -84,7 +84,7 @@
                 <div class="Content" id="RedWolfContent" style="display:none">
                     <div><h2 class="SpeciesName">Red Wolves/ <i>Canis Rufus</i></h2></div>
                     <div class="Photo">
-                        <img src="Pictures/redwolf600w.jpg" title="red wolf" />
+                        <img id="RedWolfImg" src="../Pictures/redwolf600w.jpg" title="red wolf" />
                     </div>
                     <div>
                         <h3 class="Info Description">Description</h3>
@@ -125,7 +125,7 @@
                 <div class="Content" id="CoyoteContent" style="display:none">
                     <div><h2 class="SpeciesName">Coyote/ <i>Canis Latrans</i></h2></div>
                     <div class="Photo">
-                        <img src="Pictures/coyote600w.jpg" title="coyote" />
+                        <img id="CoyoteImg" src="../Pictures/coyote600w.jpg" title="coyote" />
                     </div>
                     <div>
                         <h3 class="Info Description">Description</h3>
@@ -176,12 +176,12 @@
                         <li><a href="https://www.arkive.org/red-wolf/canis-rufus/">Arkive: Red Wolf</a></li>
                     </ul>
                 </div>
-                <a href="#about"><h4 id="About">About</h4></a>
+                <a href="About.html"><h4 id="About">About</h4></a>
             </footer>
         </div>
     </div>
 
-    <script src="Scripts/ContentButtonController.js" type="text/javascript"></script>
-    <script src="Scripts/DropdownController.js" type="text/javascript"></script>
+    <script src="../Scripts/ContentButtonController.js" type="text/javascript"></script>
+    <script src="../Scripts/DropdownController.js" type="text/javascript"></script>
 </body>
 </html>
